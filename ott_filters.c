@@ -187,24 +187,3 @@ float CalculateFilterResponse(BiquadFilter* filter, float frequency, float sampl
     // Return magnitude response
     return sqrtf(num_mag_sq / den_mag_sq);
 }
-
-/*
-NOTES on OTT's Filter Implementation:
-
-1. **Dual Output Design**: Each biquad simultaneously produces lowpass (offset 0x24) 
-   and highpass (calculated) outputs, enabling efficient crossover filtering.
-
-2. **Modified State Update**: The state update equations (2*value - previous) suggest
-   this is a modified Direct Form II or possibly a lattice filter topology.
-
-3. **3-Band Crossover**: OTT uses 6 biquad filters to create 3 frequency bands:
-   - Low: 0-200Hz (lowpass output of filters 0,1)
-   - Mid: 200Hz-2kHz (highpass of 0,1 → lowpass of 2,3)  
-   - High: 2kHz+ (highpass output of 2,3 or 4,5)
-
-4. **Bilinear Transform**: The coefficient calculation uses standard bilinear
-   transform with tan(ω/2) for frequency warping.
-
-This filtering system is what enables OTT's precise frequency band separation
-for independent compression processing.
-*/
