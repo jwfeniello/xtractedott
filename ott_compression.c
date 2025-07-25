@@ -1,8 +1,3 @@
-/**
- * OTT Compression Engine
- * Extracted from the complex compression algorithm in main processing
- */
-
 #include "ott_plugin.h"
 
 // ============================================================================
@@ -284,36 +279,3 @@ bool IsCompressorActive(CompressorState* comp)
     // Return true if compressor is currently applying gain reduction
     return (comp->envelope_output < 0.95); // 5% threshold for "active"
 }
-
-/*
-NOTES on OTT's Compression Algorithm:
-
-This compression engine implements OTT's distinctive dual-mode processing:
-
-1. **Dual Processing Paths**: The algorithm branches based on ratio_state vs 
-   NEGATIVE_THRESHOLD, creating two completely different compression behaviors.
-
-2. **Logarithmic Domain Processing**: All gain calculations happen in log domain
-   for smooth, musical compression curves that avoid harsh artifacts.
-
-3. **Upward AND Downward Compression**: Unlike typical compressors that only
-   reduce gain above threshold, OTT simultaneously:
-   - Expands quiet signals (upward compression)
-   - Compresses loud signals (downward compression)
-
-4. **Complex Envelope Following**: Multiple envelope followers with different
-   time constants create the characteristic "pumping" effect.
-
-5. **Ratio-Dependent Behavior**: The processing characteristics change 
-   dramatically based on the compression ratio setting.
-
-Key Features:
-- **Musical Compression Curves**: Exponential gain changes sound natural
-- **Dual-Slope Processing**: Different behavior above/below threshold
-- **Advanced Envelope Control**: Separate attack/release for each mode
-- **Numerical Stability**: Careful handling of edge cases and zero values
-
-This algorithm is what gives OTT its distinctive sound - the combination of
-upward and downward compression creates the characteristic "pumping" effect
-that makes quiet parts louder and loud parts more controlled simultaneously.
-*/
