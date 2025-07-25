@@ -25,8 +25,6 @@ ott_main.c             - Plugin init/integration
 README.md              - You’re here
 ```
 
-## Key Discoveries
-
 ### Architecture:
 1. **Dual-output biquads** – lowpass and highpass simultaneously.
 2. **Ratio math** – `(x-0.5)*16+1` scaling.
@@ -34,7 +32,6 @@ README.md              - You’re here
 4. **Log-based gain math** – uses log domain for smoother behavior.
 5. **Advanced mode** – toggles between different internal behaviors.
 
-### Magic Numbers:
 - `ENVELOPE_DECAY_RATE`: `2.49999994e-05f`
 - `COMPRESSION_SCALING`: `0.519999981f`
 - `LOG_SCALE_FACTOR`: `0x40215f2ced384f29`
