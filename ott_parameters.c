@@ -1,8 +1,3 @@
-/**
- * OTT Parameter Management
- * Extracted from OTT_SetParameter function and related parameter handling
- */
-
 #include "ott_plugin.h"
 
 // ============================================================================
@@ -360,27 +355,3 @@ void OTT_GetParameterDisplay(int parameterIndex, float value, char* display, int
         snprintf(display, maxLen, "%.1f%s", percentage, param->units);
     }
 }
-
-/*
-NOTES on OTT's Parameter System:
-
-1. **Complex Ratio Scaling**: Parameters 2&3 (upward/downward ratio) use 
-   sophisticated scaling where 0.5 is the "unity" point:
-   - Below 0.5: Expansion mode (0.0-1.0 range)
-   - Above 0.5: Compression mode (1.0-9.0 range)
-
-2. **Doubled Gain Values**: Gain parameters (8-10) are stored both as normal
-   and doubled values, with the processing engine using the doubled values.
-
-3. **Boolean Processing**: Several parameters are treated as boolean switches
-   with special conversion logic (0.0 = false, anything else = true).
-
-4. **Preset Integration**: The parameter system includes preset storage with
-   specific memory offsets for automation and patch saving.
-
-5. **Update Triggering**: Most parameters set a needsUpdate flag to trigger
-   recalculation of processing coefficients.
-
-This parameter mapping system is crucial for recreating OTT's exact behavior,
-as it determines how user interface controls translate to internal DSP values.
-*/
