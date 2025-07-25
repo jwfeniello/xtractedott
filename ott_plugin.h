@@ -1,8 +1,3 @@
-/**
- * OTT Multiband Compressor - Main Header File
- * Reverse engineered from Xfer Records OTT VST
- */
-
 #ifndef OTT_PLUGIN_H
 #define OTT_PLUGIN_H
 
