@@ -1,8 +1,3 @@
-/**
- * OTT Plugin Integration & Initialization
- * Shows how to put all the pieces together
- */
-
 #include "ott_plugin.h"
 #include <stdlib.h>
 #include <string.h>
