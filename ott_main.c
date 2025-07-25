@@ -349,30 +349,3 @@ int main() {
     
     return 0;
 }
-*/
-
-/*
-INTEGRATION NOTES:
-
-1. **Memory Management**: The plugin allocates significant memory for delay 
-   buffers (256KB total). Ensure proper cleanup to avoid memory leaks.
-
-2. **Thread Safety**: This implementation is NOT thread-safe. In a real VST,
-   you'd need proper synchronization between audio and UI threads.
-
-3. **Sample Rate Changes**: Call OTT_SetSampleRate() whenever the host changes
-   sample rate to recalculate filter coefficients.
-
-4. **Buffer Size**: The plugin can handle any buffer size, but larger buffers
-   are more efficient due to loop overhead.
-
-5. **Parameter Changes**: Parameter changes trigger processing updates via the
-   needsUpdate flag. In advanced implementations, you might want to interpolate
-   parameter changes within audio blocks.
-
-6. **Preset System**: The preset system uses OTT's original memory layout for
-   compatibility, but you could implement your own preset format.
-
-This integration code provides everything needed to build a working OTT clone
-that can be wrapped in any plugin format (VST2, VST3, AU, AAX, etc.).
-*/
