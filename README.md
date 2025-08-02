@@ -3,7 +3,7 @@
 This is a reverse-engineered implementation of Xfer Records' OTT multiband compressor.
 
 
-**Note:** This is still a work in progress. Building works in some cases but is a bit rough and needs more testing and refinement.
+**Note:** This is still a work in progress. Building does not work.
 
 ## What’s Inside
 
