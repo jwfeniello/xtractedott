@@ -37,15 +37,6 @@ README.md              - You’re here
 - `LOG_SCALE_FACTOR`: `0x40215f2ced384f29`
 - `DELAY_BUFFER_SIZE`: `0x8000` (32768)
 
-## Building
-
-**Warning:** Building is iffy right now. It compiles, but integration and some features still need work.
-
-### Example Build Command
-```bash
-gcc -c ott_processing.c ott_filters.c ott_compression.c ott_parameters.c ott_main.c
-ar rcs libott.a *.o
-```
 
 ## Parameters
 
