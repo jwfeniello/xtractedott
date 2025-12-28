@@ -1,5 +1,10 @@
 <img width="2500" height="1000" alt="LOGO" src="https://github.com/user-attachments/assets/fa075a60-3d34-49a5-b111-088fc0b894fd" />
 
+
+
+# This is pretty rough and partly incorrect. I wasn’t very knowledgeable when I wrote it. There could be something useful in here, but double-check everything!!!
+
+
 This is a reverse-engineered implementation of Xfer Records' OTT multiband compressor.
 
 
