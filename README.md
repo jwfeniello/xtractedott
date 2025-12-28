@@ -2,7 +2,7 @@
 
 
 
-# This is pretty rough and partly incorrect. I wasn’t very knowledgeable when I wrote it. There could be something useful in here, but double-check everything!!!
+# This is pretty rough and partly incorrect. I wasn’t very knowledgeable when I wrote it. There could be something useful in here, but double check everything!!!
 
 
 This is a reverse-engineered implementation of Xfer Records' OTT multiband compressor.
